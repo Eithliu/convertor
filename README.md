@@ -1,6 +1,6 @@
 # convertor
 
-This template should help get you started developing with Vue 3 in Vite.
+This tiny app was created to practice Vue 3 with v-model and user interactions.
 
 ## Recommended IDE Setup
 
