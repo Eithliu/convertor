@@ -7,11 +7,11 @@
     <div class="form">
       <label for="yourWeight" class="label">Votre poids</label>
       <input type="text" v-model="userInput" placeholder="Votre poids en kg">
-      <button @click.prevent="handleConversion" type="submit">Convertir</button>
+      <button @click.prevent="handleConversion" type="submit" :class="[ userInput ? '' : 'inactiveBtn']">Convertir</button>
       <div v-if="checkInput">
         <div class="result" v-if="userInput !== null">
           <h1 class="numbered">{{ converted }}</h1>
-          <img src="@/assets/Fixedbigmac.png" alt="Illustration d'un BigMac" class="bigmac">
+          <img src="@/assets/Fixedbigmac.png" alt="Illustration d'un BigMac" :class="[ userInput ? 'bigmac' : 'inactiveBigmac']">
         </div>
       </div>
       <div v-else>
@@ -118,6 +118,17 @@ const handleConversion = () => {
   label {
     justify-content: flex-start;
   }
+
+}
+.inactiveBigmac 
+{
+  display: none;
+}
+
+.inactiveBtn {
+  background-color: #84b0e2;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 input {
